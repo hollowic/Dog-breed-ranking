@@ -1,0 +1,26 @@
+.column {
+    width: 300px;
+    // min-height: 3rem;
+    max-height: 600px;
+    background: #efcc94;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: auto;
+
+    .header {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        height: 3rem;
+
+        .rank {
+            width: 20%;
+        }
+
+        .label {
+            width: 80%;
+            text-align: right;
+        }
+    }
+}
