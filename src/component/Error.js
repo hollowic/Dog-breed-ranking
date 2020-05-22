@@ -1,9 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Tooltip } from "@material-ui/core";
 import Modal from "@material-ui/core/Modal";
 import Fade from "@material-ui/core/Fade";
 import Backdrop from "@material-ui/core/Backdrop";
+import ClearIcon from "@material-ui/icons/Clear";
 
 const useStyles = makeStyles(() => ({
   modal: {
@@ -35,6 +35,21 @@ const useStyles = makeStyles(() => ({
     fontWeight: "300",
     fontFamily: "'Raleway', sans-serif",
     fontSize: "12px",
+  },
+  close: {
+    color: "#d3dce6",
+    width: "55px",
+    height: "55px",
+    position: "absolute",
+    top: 0,
+    right: 0,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    cursor: "pointer",
+    "&:hover": {
+      color: "#9facbd",
+    },
   },
   "@keyframes shake": {
     "10%, 90%": {
@@ -74,7 +89,18 @@ export default function Error({ open, handleCloseOnClick }) {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <div className={classes.title}>"Woof Invalid Action Woof!"</div>
+            <div className={classes.close}>
+              <ClearIcon onClick={handleCloseOnClick} />
+            </div>
+            <div className={classes.title}>
+              <span role="img" aria-label="Puppy emoji">
+                🐶
+              </span>
+              Woof Invalid Action Woof
+              <span role="img" aria-label="Puppy emoji">
+                🐶
+              </span>
+            </div>
             <div className={classes.message}>
               "Maximum of 19 breeds and minimum of 1 per table."
             </div>
