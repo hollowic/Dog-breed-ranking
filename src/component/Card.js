@@ -7,8 +7,11 @@ export default React.forwardRef(({ children, rank, provided }, ref) => {
       className={styles.card}
       {...provided.draggableProps}
       {...provided.dragHandleProps}
+      aria-label={`Card for ${children}`}
     >
-      <div className={styles.rank}>{rank}</div>
+      <div className={styles.rank} aria-label={`Current ranking: ${rank}`}>
+        {rank}
+      </div>
       <div className={styles.name}>{children}</div>
     </div>
   );
