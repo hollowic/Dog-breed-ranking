@@ -8,7 +8,7 @@
       The tables must not share the same breed at any time.
 - [x] Implement drag and drop functionality to reorder rows within a table. The rank must
       remain in numerical order.
-- [ ] Implement drag and drop functionality to move a row from one table to another. The rank
+- [x] Implement drag and drop functionality to move a row from one table to another. The rank
       must remain in numerical order. A table can have a maximum of 19 breeds and
       minimum of 1. If a user tries to move the last row to another table, prompt a dialog
       saying “Woof Invalid Action Woof”.
