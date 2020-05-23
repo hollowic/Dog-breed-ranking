@@ -19,6 +19,7 @@ function App() {
         table1: pickedBreeds.slice(10),
         table2: pickedBreeds.slice(0, 10),
       });
+      setIsLoading(false);
     } catch (err) {
       console.log("Whoops there was an error getting our breed data!", err);
     }
@@ -28,6 +29,7 @@ function App() {
     fetchData();
   }, []);
 
+  const [isLoading, setIsLoading] = useState(true);
   const [breeds, setBreeds] = useState({});
   const [error, setError] = useState(false);
 
@@ -95,16 +97,18 @@ function App() {
           <Error open={error} handleCloseOnClick={handleCloseOnClick} />
         )}
         <Droppable droppableId="1">
-          {(provided, snapshot) => (
-            <Table
-              id="1"
-              ref={provided.innerRef}
-              breeds={breeds.table1}
-              label="Table 1"
-              provided={provided}
-              snapshot={snapshot}
-            />
-          )}
+          {(provided, snapshot) =>
+            !isLoading && (
+              <Table
+                id="1"
+                ref={provided.innerRef}
+                breeds={breeds.table1}
+                label="Table 1"
+                provided={provided}
+                snapshot={snapshot}
+              />
+            )
+          }
         </Droppable>
 
         <Tooltip title="Export as JSON">
@@ -122,16 +126,18 @@ function App() {
         </Tooltip>
 
         <Droppable droppableId="2">
-          {(provided, snapshot) => (
-            <Table
-              id="2"
-              ref={provided.innerRef}
-              breeds={breeds.table2}
-              label="Table 2"
-              provided={provided}
-              snapshot={snapshot}
-            />
-          )}
+          {(provided, snapshot) =>
+            !isLoading && (
+              <Table
+                id="2"
+                ref={provided.innerRef}
+                breeds={breeds.table2}
+                label="Table 2"
+                provided={provided}
+                snapshot={snapshot}
+              />
+            )
+          }
         </Droppable>
       </div>
     </DragDropContext>
