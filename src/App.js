@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Table from "./component/Table";
 import Error from "./component/Error";
+import exportJSON from "./jsonTemplate";
+import Button from "@material-ui/core/Button";
+import ShareIcon from "@material-ui/icons/Share";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import "./App.css";
 
@@ -133,9 +136,21 @@ function App() {
               breeds={breeds.table1}
               label="Table 1"
               provided={provided}
+              snapshot={snapshot}
             />
           )}
         </Droppable>
+        <a
+          download="rankings.json"
+          onClick={() => exportJSON(breeds)}
+          id="download"
+          href={"data:text/json;charset=utf-8," + exportJSON(breeds)}
+        >
+          <Button style={{ fontWeight: "700" }}>
+            <ShareIcon />
+            Export
+          </Button>
+        </a>
         <Droppable droppableId="2">
           {(provided, snapshot) => (
             <Table
@@ -144,6 +159,7 @@ function App() {
               breeds={breeds.table2}
               label="Table 2"
               provided={provided}
+              snapshot={snapshot}
             />
           )}
         </Droppable>
