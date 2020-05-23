@@ -90,7 +90,9 @@ function App() {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div id="app">
-        <Error open={error} handleCloseOnClick={handleCloseOnClick} />
+        {error && (
+          <Error open={error} handleCloseOnClick={handleCloseOnClick} />
+        )}
         <Droppable droppableId="1">
           {(provided, snapshot) => (
             <Table

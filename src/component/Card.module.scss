@@ -21,3 +21,9 @@
     text-transform: capitalize;
   }
 }
+
+@media only screen and (max-width: 834px) {
+  .card {
+    font-size: 0.8rem;
+  }
+}
