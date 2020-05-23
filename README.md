@@ -30,3 +30,12 @@
 ## Demo
 
 [Demo](https://dog-breed-ranking.netlify.app/)
+
+## Design decisions
+
+- Decided 3 light colors for dragging/hover over to emphasize the user action and better help with accessibility
+- Decided with no scroll and auto adjust table height because scrolling is an additional action user needs to take to view all the information
+- When the viewport is on a smaller width, we move the export button to the top of the page in order to utilize all of our real estate
+- Simple tool tip to give direction to user as to how the app is supposed to be used
+- Box shadow on the table and cards to give better depth of view during dragging action
+- Error modal explains clearly why the error occurred
