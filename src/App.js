@@ -4,6 +4,7 @@ import Table from "./component/Table";
 import Error from "./component/Error";
 import exportJSON from "./jsonTemplate";
 import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
 import ShareIcon from "@material-ui/icons/Share";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { reorder, move, pickRandom } from "./helpers/helperFn";
@@ -105,17 +106,21 @@ function App() {
             />
           )}
         </Droppable>
-        <a
-          download="rankings.json"
-          onClick={() => exportJSON(breeds)}
-          id="download"
-          href={"data:text/json;charset=utf-8," + exportJSON(breeds)}
-        >
-          <Button style={{ fontWeight: "700" }}>
-            <ShareIcon />
-            Export
-          </Button>
-        </a>
+
+        <Tooltip title="Export as JSON">
+          <a
+            download="rankings.json"
+            onClick={() => exportJSON(breeds)}
+            id="download"
+            href={"data:text/json;charset=utf-8," + exportJSON(breeds)}
+          >
+            <Button style={{ fontWeight: "700" }}>
+              <ShareIcon />
+              Export
+            </Button>
+          </a>
+        </Tooltip>
+
         <Droppable droppableId="2">
           {(provided, snapshot) => (
             <Table
