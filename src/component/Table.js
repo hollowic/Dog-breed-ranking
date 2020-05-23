@@ -25,6 +25,7 @@ export default React.forwardRef(
           <div className={styles.rank}>Rank</div>
           <div className={styles.label}>Breed group {id}</div>
         </div>
+
         {breeds?.map((el, index) => {
           return (
             <Draggable key={el} draggableId={el} index={index}>
