@@ -9,7 +9,12 @@ export default React.forwardRef(
   ({ provided, breeds, label, id, snapshot }, ref) => {
     return (
       <Tooltip title="Drag to reorder">
-        <div ref={ref} className={styles.column} style={getListStyle(snapshot)}>
+        <div
+          ref={ref}
+          className={styles.column}
+          style={getListStyle(snapshot)}
+          aria-label={`Ranking column for breed group ${id}`}
+        >
           <div aria-label={label} className={styles.header}>
             <div className={styles.rank}>Rank</div>
             <div className={styles.label}>Breed group {id}</div>

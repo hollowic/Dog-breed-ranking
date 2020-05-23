@@ -117,6 +117,7 @@ function App() {
             onClick={() => exportJSON(breeds)}
             id="download"
             href={"data:text/json;charset=utf-8," + exportJSON(breeds)}
+            aria-label="Export rankings as JSON file"
           >
             <Button style={{ fontWeight: "700" }}>
               <ShareIcon />
