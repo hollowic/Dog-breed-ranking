@@ -18,10 +18,10 @@ a {
 }
 
 #download {
-  animation: fadeIn 0.5s ease-in forwards;
-  -webkit-animation: fadeIn 0.5s ease-in forwards;
-  -moz-animation: fadeIn 0.5s ease-in forwards;
-  -o-animation: fadeIn 0.5s ease-in forwards;
+  animation: fadeIn 0.5s ease-in;
+  -webkit-animation: fadeIn 0.5s ease-in;
+  -moz-animation: fadeIn 0.5s ease-in;
+  -o-animation: fadeIn 0.5s ease-in;
 }
 
 @keyframes fadeIn {

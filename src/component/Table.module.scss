@@ -6,10 +6,10 @@
   box-shadow: rgba(0, 0, 0, 0.04) 0 0 0 1px, rgba(0, 0, 0, 0.1) 0 2px 10px;
   position: relative;
 
-  animation: fadeIn 0.5s ease-in forwards;
-  -webkit-animation: fadeIn 0.5s ease-in forwards;
-  -moz-animation: fadeIn 0.5s ease-in forwards;
-  -o-animation: fadeIn 0.5s ease-in forwards;
+  animation: fadeIn 0.5s ease-in;
+  -webkit-animation: fadeIn 0.5s ease-in;
+  -moz-animation: fadeIn 0.5s ease-in;
+  -o-animation: fadeIn 0.5s ease-in;
 
   .header {
     display: flex;
@@ -34,7 +34,6 @@
 
 @keyframes fadeIn {
   from {
-    transform: translateY(1rem);
     opacity: 0;
   }
 
