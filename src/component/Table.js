@@ -1,21 +1,8 @@
 import React from "react";
 import Card from "./Card";
 import { Draggable } from "react-beautiful-dnd";
+import { getListStyle } from "../helpers/helperFn";
 import styles from "./Table.module.scss";
-
-const getListStyle = (snapshot) => {
-  // Giving isDraggingOver preference
-  if (snapshot.isDraggingOver) {
-    return { background: "#FFEBE6" };
-  }
-
-  // If it is the home list but not dragging over
-  if (snapshot.draggingFromThisWith) {
-    return { background: "#E6FCFF" };
-  }
-
-  return { background: "#EFCC94" };
-};
 
 export default React.forwardRef(
   ({ provided, breeds, label, id, snapshot }, ref) => {

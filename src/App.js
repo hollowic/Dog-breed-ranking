@@ -6,45 +6,8 @@ import exportJSON from "./jsonTemplate";
 import Button from "@material-ui/core/Button";
 import ShareIcon from "@material-ui/icons/Share";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { reorder, move, pickRandom } from "./helpers/helperFn";
 import "./App.css";
-
-// Reordering the result
-const reorder = (list, startIndex, endIndex) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-  return result;
-};
-
-// Moves an item from one list to another list.
-const move = (source, destination, droppableSource, droppableDestination) => {
-  const sourceClone = Array.from(source);
-  const destClone = Array.from(destination);
-  const [removed] = sourceClone.splice(droppableSource.index, 1);
-  destClone.splice(droppableDestination.index, 0, removed);
-  const result = {};
-  result[droppableSource.droppableId] = sourceClone;
-  result[droppableDestination.droppableId] = destClone;
-  if (!result[1].length || !result[2].length) {
-    return null;
-  } else {
-    return result;
-  }
-};
-
-// Picking 20 random breeds
-const pickRandom = (breedsArray) => {
-  let n = 20;
-  let picked = new Array(n);
-  let length = breedsArray.length;
-  let taken = new Array(length);
-  while (n--) {
-    let x = Math.floor(Math.random() * length);
-    picked[n] = breedsArray[x in taken ? taken[x] : x];
-    taken[x] = --length in taken ? taken[length] : length;
-  }
-  return picked;
-};
 
 function App() {
   const fetchData = async () => {

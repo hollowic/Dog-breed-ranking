@@ -1,14 +1,6 @@
 import React from "react";
+import { getItemStyle } from "../helpers/helperFn";
 import styles from "./Card.module.scss";
-
-const getItemStyle = (isDragging, draggableStyle) => ({
-  // change style if dragging
-  background: isDragging ? "#E3FCEF" : "#F4F4F4",
-  border: isDragging ? "2px rgba(9, 30, 66, 0.71) solid" : "none",
-
-  // styles we need to apply on draggables
-  ...draggableStyle,
-});
 
 export default React.forwardRef(
   ({ children, rank, provided, snapshot }, ref) => {
