@@ -39,3 +39,4 @@
 - Simple tool tip to give direction to user as to how the app is supposed to be used
 - Box shadow on the table and cards to give better depth of view during dragging action
 - Error modal explains clearly why the error occurred
+- Added loading state to prevent first render jank when there is no data to be displayed yet (if given more time I could of implemented a skeleton version of the table to be displayed instead for a better user experience)
