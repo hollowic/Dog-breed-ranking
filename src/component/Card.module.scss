@@ -24,6 +24,12 @@
 
 @media only screen and (max-width: 834px) {
   .card {
-    font-size: 0.8rem;
+    font-size: 0.8725rem;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .card {
+    font-size: 0.75rem;
   }
 }
