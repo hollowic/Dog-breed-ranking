@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Table from "./component/Table";
 import Error from "./component/Error";
@@ -96,9 +96,9 @@ function App() {
         {error && (
           <Error open={error} handleCloseOnClick={handleCloseOnClick} />
         )}
-        <Droppable droppableId="1">
-          {(provided, snapshot) =>
-            !isLoading && (
+        {!isLoading && (
+          <Droppable droppableId="1">
+            {(provided, snapshot) => (
               <Table
                 id="1"
                 ref={provided.innerRef}
@@ -107,10 +107,9 @@ function App() {
                 provided={provided}
                 snapshot={snapshot}
               />
-            )
-          }
-        </Droppable>
-
+            )}
+          </Droppable>
+        )}
         <Tooltip title="Export as JSON">
           <a
             download="rankings.json"
@@ -125,10 +124,9 @@ function App() {
             </Button>
           </a>
         </Tooltip>
-
-        <Droppable droppableId="2">
-          {(provided, snapshot) =>
-            !isLoading && (
+        {!isLoading && (
+          <Droppable droppableId="2">
+            {(provided, snapshot) => (
               <Table
                 id="2"
                 ref={provided.innerRef}
@@ -137,9 +135,9 @@ function App() {
                 provided={provided}
                 snapshot={snapshot}
               />
-            )
-          }
-        </Droppable>
+            )}
+          </Droppable>
+        )}
       </div>
     </DragDropContext>
   );
